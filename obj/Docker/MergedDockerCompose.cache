@@ -1,5 +1,42 @@
 name: dockercompose13597794595954627979
 services:
+  apigateway:
+    build:
+      context: C:\Prabhanjan\AspNetCore7\APIGatewaySolution
+      dockerfile: APIGateway/Dockerfile
+    container_name: api-gateway
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: apigateway
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "8880"
+      protocol: tcp
+  blazorserverwebui:
+    build:
+      context: C:\Prabhanjan\AspNetCore7\APIGatewaySolution
+      dockerfile: BlazorServerWebUI/Dockerfile
+    container_name: blazor-web-ui
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: blazorserverwebui
+    networks:
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "8889"
+      protocol: tcp
   customerdb:
     container_name: customer-db
     environment:
@@ -30,10 +67,6 @@ services:
     - mode: ingress
       target: 80
       protocol: tcp
-    - mode: ingress
-      target: 80
-      published: "8882"
-      protocol: tcp
   orderdb:
     container_name: order-db
     image: mongo
@@ -59,10 +92,6 @@ services:
     ports:
     - mode: ingress
       target: 80
-      protocol: tcp
-    - mode: ingress
-      target: 80
-      published: "8886"
       protocol: tcp
   productdb:
     container_name: product-db
@@ -93,10 +122,8 @@ services:
     - mode: ingress
       target: 80
       protocol: tcp
-    - mode: ingress
-      target: 80
-      published: "8884"
-      protocol: tcp
 networks:
   backend:
     name: dockercompose13597794595954627979_backend
+  frontend:
+    name: dockercompose13597794595954627979_frontend

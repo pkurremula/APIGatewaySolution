@@ -1,9 +1,9 @@
 version: '3.4'
-name: DemoAPIGateway
 
 
 networks:
   backend:
+  frontend:
 
 services:
   customerdb:
@@ -25,8 +25,8 @@ services:
       dockerfile: CustomerWebAPI/Dockerfile
     networks:
         - backend
-    ports:
-        - 8882:80
+    #ports:
+    #    - 8882:80
     environment:
         - DB_HOST=customerdb
         - DB_NAME=dms_customer
@@ -50,8 +50,8 @@ services:
       dockerfile: ProductWebAPI/Dockerfile
     networks:
         - backend
-    ports:
-        - 8884:80
+    #ports:
+    #    - 8884:80
     environment:
         - DB_HOST=productdb
         - DB_NAME=dms_product
@@ -71,10 +71,33 @@ services:
     build:
       context: .
       dockerfile: OrderWebAPI/Dockerfile
-    ports:
-        - 8886:80
+    #ports:
+    #    - 8886:80
     networks:
         - backend
     environment:
         - DB_HOST=orderdb
         - DB_NAME=dms_order
+
+  apigateway:
+    container_name: api-gateway
+    image: ${DOCKER_REGISTRY-}apigateway
+    build:
+      context: .
+      dockerfile: APIGateway/Dockerfile
+    ports:
+        - 8880:80
+    networks:
+        - backend
+        - frontend
+
+  blazorserverwebui:
+    container_name: blazor-web-ui
+    image: ${DOCKER_REGISTRY-}blazorserverwebui
+    build:
+      context: .
+      dockerfile: BlazorServerWebUI/Dockerfile
+    ports:
+        - 8889:80
+    networks:
+        - frontend

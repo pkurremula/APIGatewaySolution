@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "a99h0Z28wDcaFuV75EN2cJpjEE1poW8BeuQJKWb+pOtOLzNWiT3ZhcTml0J2OGFQWE4yH85jcUQ7jwrR6KSY9w==",
+  "success": true,
+  "projectFilePath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\BlazorServerWebUI\\BlazorServerWebUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\prabh\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.15.1\\microsoft.visualstudio.azure.containers.tools.targets.1.15.1.nupkg.sha512"
+  ],
+  "logs": []
+}
