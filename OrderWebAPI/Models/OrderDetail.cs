@@ -1,10 +1,10 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace OrderWebAPI.Models
+namespace OrderWebApi.Models
 {
     [Serializable, BsonIgnoreExtraElements]
-    public class OrderDetails
+    public class OrderDetail
     {
         [BsonElement("product_id"), BsonRepresentation(BsonType.Int32)]
         public int ProductId { get; set; }

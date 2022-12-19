@@ -113,7 +113,7 @@
           }
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.17.0": {
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.15.1": {
         "type": "package",
         "build": {
           "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props": {},
@@ -362,10 +362,10 @@
         "microsoft.extensions.diagnosticadapter.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.17.0": {
-      "sha512": "gfDtAL1WhkjbRdbZlt/ZeQYCbgRpNCZCGj+yeqHObsNFRDHjq8qZJOX9AyTxJpSRYMi9SJk7JDyAbbVYRgEhAA==",
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.15.1": {
+      "sha512": "dcsF7rjxvMnqtfckpzWYvBsZsJD51yQVHSSgd2EN5/CJ/zQigJrfo313lvAwf0VL9ZOHLnJthuboadjnBAU7Ng==",
       "type": "package",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.17.0",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.15.1",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -393,7 +393,7 @@
         "build/ToolsTarget.props",
         "build/ToolsTarget.targets",
         "icon.png",
-        "microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
+        "microsoft.visualstudio.azure.containers.tools.targets.1.15.1.nupkg.sha512",
         "microsoft.visualstudio.azure.containers.tools.targets.nuspec",
         "tools/Microsoft.VisualStudio.Containers.Tools.Common.dll",
         "tools/Microsoft.VisualStudio.Containers.Tools.Shared.dll",
@@ -531,7 +531,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.17.0",
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.15.1",
       "Ocelot >= 18.0.0"
     ]
   },
@@ -541,11 +541,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\APIGateway\\APIGateway.csproj",
-      "projectName": "APIGateway",
-      "projectPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\APIGateway\\APIGateway.csproj",
+      "projectUniqueName": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ApiGateway\\ApiGateway.csproj",
+      "projectName": "ApiGateway",
+      "projectPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ApiGateway\\ApiGateway.csproj",
       "packagesPath": "C:\\Users\\prabh\\.nuget\\packages\\",
-      "outputPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\APIGateway\\obj\\",
+      "outputPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ApiGateway\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\prabh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -577,7 +577,7 @@
         "dependencies": {
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",
-            "version": "[1.17.0, )"
+            "version": "[1.15.1, )"
           },
           "Ocelot": {
             "target": "Package",

@@ -1,23 +1,23 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CustomerWebAPI.Models
+namespace CustomerWebApi.Models
 {
-    [Table("Customer", Schema = "dbo")]
+    [Table("customer", Schema = "dbo")]
     public class Customer
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("Customer_id")]
+        [Column("customer_id")]
         public int CustomerId { get; set; }
 
-        [Column("Customer_name")]
+        [Column("customer_name")]
         public string CustomerName { get; set; }
 
-        [Column("Customer_mobile_no")]
-        public string MobileNumber   { get; set; }
+        [Column("mobile_no")]
+        public string MobileNumber { get; set; }
 
-        [Column("Customer_email")]
-        public string EmailAddress { get; set; }
+        [Column("email")]
+        public string Email { get; set; }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ProductWebAPI\\ProductWebAPI.csproj": {}
+    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ProductWebApi\\ProductWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ProductWebAPI\\ProductWebAPI.csproj": {
+    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ProductWebApi\\ProductWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ProductWebAPI\\ProductWebAPI.csproj",
-        "projectName": "ProductWebAPI",
-        "projectPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ProductWebAPI\\ProductWebAPI.csproj",
+        "projectUniqueName": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ProductWebApi\\ProductWebApi.csproj",
+        "projectName": "ProductWebApi",
+        "projectPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ProductWebApi\\ProductWebApi.csproj",
         "packagesPath": "C:\\Users\\prabh\\.nuget\\packages\\",
-        "outputPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ProductWebAPI\\obj\\",
+        "outputPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ProductWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prabh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,11 +43,11 @@
           "dependencies": {
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.17.0, )"
+              "version": "[1.14.0, )"
             },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.7, )"
+              "version": "[6.0.1, )"
             }
           },
           "imports": [

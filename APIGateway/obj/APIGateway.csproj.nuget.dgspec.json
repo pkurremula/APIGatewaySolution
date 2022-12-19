@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\APIGateway\\APIGateway.csproj": {}
+    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ApiGateway\\ApiGateway.csproj": {}
   },
   "projects": {
-    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\APIGateway\\APIGateway.csproj": {
+    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ApiGateway\\ApiGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\APIGateway\\APIGateway.csproj",
-        "projectName": "APIGateway",
-        "projectPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\APIGateway\\APIGateway.csproj",
+        "projectUniqueName": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ApiGateway\\ApiGateway.csproj",
+        "projectName": "ApiGateway",
+        "projectPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ApiGateway\\ApiGateway.csproj",
         "packagesPath": "C:\\Users\\prabh\\.nuget\\packages\\",
-        "outputPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\APIGateway\\obj\\",
+        "outputPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\ApiGateway\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prabh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,7 +43,7 @@
           "dependencies": {
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.17.0, )"
+              "version": "[1.15.1, )"
             },
             "Ocelot": {
               "target": "Package",

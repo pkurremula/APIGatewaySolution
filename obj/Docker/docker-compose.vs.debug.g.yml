@@ -7,14 +7,14 @@ services:
       target: base
       labels:
         com.microsoft.created-by: "visual-studio"
-        com.microsoft.visual-studio.project-name: "APIGateway"
+        com.microsoft.visual-studio.project-name: "ApiGateway"
     environment:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Prabhanjan\AspNetCore7\APIGatewaySolution\APIGateway:/app
-      - C:\Prabhanjan\AspNetCore7\APIGatewaySolution:/src
+      - C:\Users\prabh\source\repos\DemoMicroserviceSolution\ApiGateway:/app
+      - C:\Users\prabh\source\repos\DemoMicroserviceSolution:/src
       - C:\Users\prabh\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\prabh\.nuget\packages\:/root/.nuget/packages:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
@@ -23,7 +23,7 @@ services:
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/APIGateway.dll\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/ApiGateway.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
@@ -39,8 +39,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Prabhanjan\AspNetCore7\APIGatewaySolution\BlazorServerWebUI:/app
-      - C:\Prabhanjan\AspNetCore7\APIGatewaySolution:/src
+      - C:\Users\prabh\source\repos\DemoMicroserviceSolution\BlazorServerWebUI:/app
+      - C:\Users\prabh\source\repos\DemoMicroserviceSolution:/src
       - C:\Users\prabh\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\prabh\.nuget\packages\:/root/.nuget/packages:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
@@ -60,14 +60,14 @@ services:
       target: base
       labels:
         com.microsoft.created-by: "visual-studio"
-        com.microsoft.visual-studio.project-name: "CustomerWebAPI"
+        com.microsoft.visual-studio.project-name: "CustomerWebApi"
     environment:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Prabhanjan\AspNetCore7\APIGatewaySolution\CustomerWebAPI:/app
-      - C:\Prabhanjan\AspNetCore7\APIGatewaySolution:/src
+      - C:\Users\prabh\source\repos\DemoMicroserviceSolution\CustomerWebApi:/app
+      - C:\Users\prabh\source\repos\DemoMicroserviceSolution:/src
       - C:\Users\prabh\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\prabh\.nuget\packages\:/root/.nuget/packages:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
@@ -76,7 +76,7 @@ services:
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/CustomerWebAPI.dll\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/CustomerWebApi.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
@@ -87,14 +87,14 @@ services:
       target: base
       labels:
         com.microsoft.created-by: "visual-studio"
-        com.microsoft.visual-studio.project-name: "OrderWebAPI"
+        com.microsoft.visual-studio.project-name: "OrderWebApi"
     environment:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Prabhanjan\AspNetCore7\APIGatewaySolution\OrderWebAPI:/app
-      - C:\Prabhanjan\AspNetCore7\APIGatewaySolution:/src
+      - C:\Users\prabh\source\repos\DemoMicroserviceSolution\OrderWebApi:/app
+      - C:\Users\prabh\source\repos\DemoMicroserviceSolution:/src
       - C:\Users\prabh\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\prabh\.nuget\packages\:/root/.nuget/packages:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
@@ -103,7 +103,7 @@ services:
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/OrderWebAPI.dll\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/OrderWebApi.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
@@ -114,14 +114,14 @@ services:
       target: base
       labels:
         com.microsoft.created-by: "visual-studio"
-        com.microsoft.visual-studio.project-name: "ProductWebAPI"
+        com.microsoft.visual-studio.project-name: "ProductWebApi"
     environment:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Prabhanjan\AspNetCore7\APIGatewaySolution\ProductWebAPI:/app
-      - C:\Prabhanjan\AspNetCore7\APIGatewaySolution:/src
+      - C:\Users\prabh\source\repos\DemoMicroserviceSolution\ProductWebApi:/app
+      - C:\Users\prabh\source\repos\DemoMicroserviceSolution:/src
       - C:\Users\prabh\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\prabh\.nuget\packages\:/root/.nuget/packages:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
@@ -130,7 +130,7 @@ services:
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/ProductWebAPI.dll\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/ProductWebApi.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true

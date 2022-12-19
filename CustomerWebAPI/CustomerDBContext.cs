@@ -1,29 +1,29 @@
-﻿using CustomerWebAPI.Models;
+﻿using CustomerWebApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace CustomerWebAPI
+namespace CustomerWebApi
 {
-    public class CustomerDBContext : DbContext
+    public class CustomerDbContext : DbContext
     {
-        public CustomerDBContext(DbContextOptions<CustomerDBContext> dbContextoptions) : base(dbContextoptions)
+        public CustomerDbContext(DbContextOptions<CustomerDbContext> dbContextOptions) : base(dbContextOptions)
         {
             try
             {
                 var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
-                if(databaseCreator != null)
+                if (databaseCreator != null)
                 {
                     if (!databaseCreator.CanConnect()) databaseCreator.Create();
                     if (!databaseCreator.HasTables()) databaseCreator.CreateTables();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
 
-        public DbSet<Customer> Cusotmers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

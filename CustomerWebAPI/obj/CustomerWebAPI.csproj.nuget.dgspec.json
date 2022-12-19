@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\CustomerWebAPI\\CustomerWebAPI.csproj": {}
+    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\CustomerWebApi\\CustomerWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\CustomerWebAPI\\CustomerWebAPI.csproj": {
+    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\CustomerWebApi\\CustomerWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\CustomerWebAPI\\CustomerWebAPI.csproj",
-        "projectName": "CustomerWebAPI",
-        "projectPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\CustomerWebAPI\\CustomerWebAPI.csproj",
+        "projectUniqueName": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\CustomerWebApi\\CustomerWebApi.csproj",
+        "projectName": "CustomerWebApi",
+        "projectPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\CustomerWebApi\\CustomerWebApi.csproj",
         "packagesPath": "C:\\Users\\prabh\\.nuget\\packages\\",
-        "outputPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\CustomerWebAPI\\obj\\",
+        "outputPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\CustomerWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prabh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,21 +45,21 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[6.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[6.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[6.0.5, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.17.0, )"
+              "version": "[1.14.0, )"
             }
           },
           "imports": [

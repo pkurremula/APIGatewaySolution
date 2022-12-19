@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "Y1V1NkVs95qeiexlpNYBziJVQizuMN2W2zNKtapJARg=",
-  "Source": "CustomerWebAPI",
-  "BasePath": "_content/CustomerWebAPI",
+  "Hash": "bxpfD0hGIiaEJqA4Zt3vD4dLSJiaYeDsvV9DqA1Sk4o=",
+  "Source": "CustomerWebApi",
+  "BasePath": "_content/CustomerWebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

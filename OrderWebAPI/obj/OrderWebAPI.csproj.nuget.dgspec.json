@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\OrderWebAPI\\OrderWebAPI.csproj": {}
+    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\OrderWebApi\\OrderWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\OrderWebAPI\\OrderWebAPI.csproj": {
+    "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\OrderWebApi\\OrderWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\OrderWebAPI\\OrderWebAPI.csproj",
-        "projectName": "OrderWebAPI",
-        "projectPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\OrderWebAPI\\OrderWebAPI.csproj",
+        "projectUniqueName": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\OrderWebApi\\OrderWebApi.csproj",
+        "projectName": "OrderWebApi",
+        "projectPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\OrderWebApi\\OrderWebApi.csproj",
         "packagesPath": "C:\\Users\\prabh\\.nuget\\packages\\",
-        "outputPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\OrderWebAPI\\obj\\",
+        "outputPath": "C:\\Prabhanjan\\AspNetCore7\\APIGatewaySolution\\OrderWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prabh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,11 +43,11 @@
           "dependencies": {
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.17.0, )"
+              "version": "[1.15.1, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.18.0, )"
+              "version": "[2.15.1, )"
             }
           },
           "imports": [

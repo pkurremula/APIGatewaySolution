@@ -1,64 +1,55 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using ProductWebAPI.Models;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using ProductWebApi.Models;
 
-namespace ProductWebAPI.Controllers
+namespace ProductWebApi.Controllers
 {
-    [Route("api/[Controller]")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : Controller
+    public class ProductController : ControllerBase
     {
-        private readonly ProductDBContext _productDBContext;
+        private readonly ProductDbContext _dbContext;
 
-        public ProductController(ProductDBContext productDBContext)
+        public ProductController(ProductDbContext productDbContext)
         {
-            _productDBContext = productDBContext;
+            _dbContext = productDbContext;
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<Product>> GetProducts()
         {
-            return _productDBContext.Products;
+            return _dbContext.Products;
         }
 
         [HttpGet("{productId:int}")]
-        public async Task<ActionResult<Product>> GetProductById(int productId)
+        public async Task<ActionResult<Product>> GetById(int productId)
         {
-            var product = await _productDBContext.Products.FindAsync(productId);
-
-            if(product == null)
-            {
-                return NotFound();
-            }
-
+            var product = await _dbContext.Products.FindAsync(productId);
             return product;
         }
 
         [HttpPost]
         public async Task<ActionResult> Create(Product product)
         {
-            await _productDBContext.Products.AddAsync(product);
-            await _productDBContext.SaveChangesAsync();
+            await _dbContext.Products.AddAsync(product);
+            await _dbContext.SaveChangesAsync();
             return Ok();
         }
 
         [HttpPut]
         public async Task<ActionResult> Update(Product product)
         {
-            _productDBContext.Products.Update(product);
-            await _productDBContext.SaveChangesAsync();
+            _dbContext.Products.Update(product);
+            await _dbContext.SaveChangesAsync();
             return Ok();
         }
 
         [HttpDelete("{productId:int}")]
         public async Task<ActionResult> Delete(int productId)
         {
-            var product = await _productDBContext.Products.FindAsync(productId);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            _productDBContext.Products.Remove(product);
-            await _productDBContext.SaveChangesAsync();
+            var product = await _dbContext.Products.FindAsync(productId);
+            _dbContext.Products.Remove(product);
+            await _dbContext.SaveChangesAsync();
             return Ok();
         }
     }

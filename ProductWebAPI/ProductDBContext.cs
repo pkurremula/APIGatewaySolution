@@ -1,20 +1,25 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
-using ProductWebAPI.Models;
+using ProductWebApi.Models;
 
-namespace ProductWebAPI
+namespace ProductWebApi
 {
-    public class ProductDBContext: DbContext
+    public class ProductDbContext : DbContext
     {
-        public ProductDBContext(DbContextOptions<ProductDBContext> dbContextoptions) : base(dbContextoptions)
+        public DbSet<Product> Products { get; set; }
+
+        public ProductDbContext(DbContextOptions<ProductDbContext> dbContextOptions) : base(dbContextOptions)
         {
             try
             {
                 var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
                 if (databaseCreator != null)
                 {
+                    // Create Database if cannot connect
                     if (!databaseCreator.CanConnect()) databaseCreator.Create();
+
+                    // Create Tables if no tables exist
                     if (!databaseCreator.HasTables()) databaseCreator.CreateTables();
                 }
             }
@@ -23,7 +28,5 @@ namespace ProductWebAPI
                 Console.WriteLine(ex.Message);
             }
         }
-
-        public DbSet<Product> Products { get; set; }
     }
 }

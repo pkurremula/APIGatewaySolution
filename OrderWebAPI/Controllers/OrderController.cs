@@ -1,29 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
-using OrderWebAPI.Models;
+using OrderWebApi.Models;
 
-namespace OrderWebAPI.Controllers
+namespace OrderWebApi.Controllers
 {
-    [Route("api/[Controller]")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class OrderController : Controller
+    public class OrderController : ControllerBase
     {
-
         private readonly IMongoCollection<Order> _orderCollection;
 
-        public OrderController() {
-
-            //var dbHost = "localhost";
-            //var dbName = "dms_order";
-
+        public OrderController()
+        {
             var dbHost = Environment.GetEnvironmentVariable("DB_HOST");
             var dbName = Environment.GetEnvironmentVariable("DB_NAME");
-
             var connectionString = $"mongodb://{dbHost}:27017/{dbName}";
 
             var mongoUrl = MongoUrl.Create(connectionString);
             var mongoClient = new MongoClient(mongoUrl);
-
             var database = mongoClient.GetDatabase(mongoUrl.DatabaseName);
             _orderCollection = database.GetCollection<Order>("order");
         }
@@ -37,8 +32,8 @@ namespace OrderWebAPI.Controllers
         [HttpGet("{orderId}")]
         public async Task<ActionResult<Order>> GetById(string orderId)
         {
-            var filterDefination = Builders<Order>.Filter.Eq(x => x.OrderId, orderId);
-            return await _orderCollection.Find(filterDefination).SingleOrDefaultAsync();
+            var filterDefinition = Builders<Order>.Filter.Eq(x => x.OrderId, orderId);
+            return await _orderCollection.Find(filterDefinition).SingleOrDefaultAsync();
         }
 
         [HttpPost]
@@ -51,18 +46,16 @@ namespace OrderWebAPI.Controllers
         [HttpPut]
         public async Task<ActionResult> Update(Order order)
         {
-            var filterDefination = Builders<Order>.Filter.Eq(x => x.OrderId, order.OrderId);
-
-            await _orderCollection.ReplaceOneAsync(filterDefination, order);
+            var filterDefinition = Builders<Order>.Filter.Eq(x => x.OrderId, order.OrderId);
+            await _orderCollection.ReplaceOneAsync(filterDefinition, order);
             return Ok();
         }
 
         [HttpDelete("{orderId}")]
-        public async Task<ActionResult> Delete(string  orderId)
+        public async Task<ActionResult> Delete(string orderId)
         {
-            var filterDefination = Builders<Order>.Filter.Eq(x => x.OrderId, orderId);
-
-            await _orderCollection.DeleteOneAsync(filterDefination);
+            var filterDefinition = Builders<Order>.Filter.Eq(x => x.OrderId, orderId);
+            await _orderCollection.DeleteOneAsync(filterDefinition);
             return Ok();
         }
     }

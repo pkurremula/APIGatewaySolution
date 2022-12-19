@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProductWebAPI.Models
+namespace ProductWebApi.Models
 {
     [Table("product")]
     public class Product
@@ -17,6 +17,6 @@ namespace ProductWebAPI.Models
         public string ProductCode { get; set; }
 
         [Column("product_price")]
-        public decimal  ProductPrice { get; set; }
+        public decimal ProductPrice { get; set; }
     }
 }

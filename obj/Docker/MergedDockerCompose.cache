@@ -1,9 +1,9 @@
-name: dockercompose13597794595954627979
+name: dockercompose10956540198963877228
 services:
   apigateway:
     build:
-      context: C:\Prabhanjan\AspNetCore7\APIGatewaySolution
-      dockerfile: APIGateway/Dockerfile
+      context: C:\Users\prabh\source\repos\DemoMicroserviceSolution
+      dockerfile: ApiGateway/Dockerfile
     container_name: api-gateway
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -17,11 +17,11 @@ services:
       protocol: tcp
     - mode: ingress
       target: 80
-      published: "8880"
+      published: "8001"
       protocol: tcp
   blazorserverwebui:
     build:
-      context: C:\Prabhanjan\AspNetCore7\APIGatewaySolution
+      context: C:\Users\prabh\source\repos\DemoMicroserviceSolution
       dockerfile: BlazorServerWebUI/Dockerfile
     container_name: blazor-web-ui
     environment:
@@ -35,31 +35,31 @@ services:
       protocol: tcp
     - mode: ingress
       target: 80
-      published: "8889"
+      published: "8002"
       protocol: tcp
   customerdb:
     container_name: customer-db
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: P@ssw0rd123$$
+      SA_PASSWORD: password@12345#
     image: mcr.microsoft.com/mssql/server:2019-latest
     networks:
       backend: null
     ports:
     - mode: ingress
       target: 1433
-      published: "8881"
+      published: "18001"
       protocol: tcp
   customerwebapi:
     build:
-      context: C:\Prabhanjan\AspNetCore7\APIGatewaySolution
-      dockerfile: CustomerWebAPI/Dockerfile
+      context: C:\Users\prabh\source\repos\DemoMicroserviceSolution
+      dockerfile: CustomerWebApi/Dockerfile
     container_name: customer-api
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       DB_HOST: customerdb
       DB_NAME: dms_customer
-      DB_SA_PASSWORD: P@ssw0rd123$$
+      DB_SA_PASSWORD: password@12345#
     image: customerwebapi
     networks:
       backend: null
@@ -75,12 +75,12 @@ services:
     ports:
     - mode: ingress
       target: 27017
-      published: "8885"
+      published: "18005"
       protocol: tcp
   orderwebapi:
     build:
-      context: C:\Prabhanjan\AspNetCore7\APIGatewaySolution
-      dockerfile: OrderWebAPI/Dockerfile
+      context: C:\Users\prabh\source\repos\DemoMicroserviceSolution
+      dockerfile: OrderWebApi/Dockerfile
     container_name: order-api
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -96,25 +96,25 @@ services:
   productdb:
     container_name: product-db
     environment:
-      MYSQL_ROOT_PASSWORD: P@ssw0rd123$$
+      MYSQL_ROOT_PASSWORD: password@12345#
     image: mysql:8.0.29-oracle
     networks:
       backend: null
     ports:
     - mode: ingress
       target: 3306
-      published: "8883"
+      published: "18003"
       protocol: tcp
   productwebapi:
     build:
-      context: C:\Prabhanjan\AspNetCore7\APIGatewaySolution
-      dockerfile: ProductWebAPI/Dockerfile
+      context: C:\Users\prabh\source\repos\DemoMicroserviceSolution
+      dockerfile: ProductWebApi/Dockerfile
     container_name: product-api
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       DB_HOST: productdb
       DB_NAME: dms_product
-      DB_ROOT_PASSWORD: P@ssw0rd123$$
+      DB_ROOT_PASSWORD: password@12345#
     image: productwebapi
     networks:
       backend: null
@@ -124,6 +124,6 @@ services:
       protocol: tcp
 networks:
   backend:
-    name: dockercompose13597794595954627979_backend
+    name: dockercompose10956540198963877228_backend
   frontend:
-    name: dockercompose13597794595954627979_frontend
+    name: dockercompose10956540198963877228_frontend

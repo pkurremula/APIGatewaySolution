@@ -6,16 +6,16 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["OrderWebAPI/OrderWebAPI.csproj", "OrderWebAPI/"]
-RUN dotnet restore "OrderWebAPI/OrderWebAPI.csproj"
+COPY ["OrderWebApi/OrderWebApi.csproj", "OrderWebApi/"]
+RUN dotnet restore "OrderWebApi/OrderWebApi.csproj"
 COPY . .
-WORKDIR "/src/OrderWebAPI"
-RUN dotnet build "OrderWebAPI.csproj" -c Release -o /app/build
+WORKDIR "/src/OrderWebApi"
+RUN dotnet build "OrderWebApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "OrderWebAPI.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "OrderWebApi.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "OrderWebAPI.dll"]
+ENTRYPOINT ["dotnet", "OrderWebApi.dll"]

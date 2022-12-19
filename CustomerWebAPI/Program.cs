@@ -1,4 +1,4 @@
-using CustomerWebAPI;
+using CustomerWebApi;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,23 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-/* Db Connection */
-
-//var dbHost = "localhost";
-//var dbName = "dms_customer";
-//var dbPassword = "P@ssw0rd123#";
-
+/* Database Context Dependency Injection */
 var dbHost = Environment.GetEnvironmentVariable("DB_HOST");
 var dbName = Environment.GetEnvironmentVariable("DB_NAME");
 var dbPassword = Environment.GetEnvironmentVariable("DB_SA_PASSWORD");
-
-var connectionString = $"Data Source={dbHost};Initial catalog={dbName};User ID=sa;Password={dbPassword}";
-
-//builder.Services.AddDbContext<CustomerDBContext>(options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=dms_customer;Trusted_Connection=True;MultipleActiveResultSets=true"));
-builder.Services.AddDbContext<CustomerDBContext>(options => options.UseSqlServer(connectionString));
-
-/* Db Connection */
-
+var connectionString = $"Data Source={dbHost};Initial Catalog={dbName};User ID=sa;Password={dbPassword}";
+builder.Services.AddDbContext<CustomerDbContext>(opt => opt.UseSqlServer(connectionString));
+/* ===================================== */
 
 var app = builder.Build();
 

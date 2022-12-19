@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "N00oU3c38FYkyoEE3b4RtSO1y3jXVL+HL/OEJISlpGk=",
-  "Source": "OrderWebAPI",
-  "BasePath": "_content/OrderWebAPI",
+  "Hash": "y/rCtyl8nPCO94C7+Q1lp8HLEHQxoDFim53rg2LlKII=",
+  "Source": "OrderWebApi",
+  "BasePath": "_content/OrderWebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

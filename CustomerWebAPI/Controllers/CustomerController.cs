@@ -1,67 +1,56 @@
-﻿using CustomerWebAPI.Models;
+﻿using CustomerWebApi.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CustomerWebAPI.Controllers
+namespace CustomerWebApi.Controllers
 {
-    [Route("api/[Controller]")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class CustomerController : Controller
+    public class CustomerController : ControllerBase
     {
+        private readonly CustomerDbContext _customerDbContext;
 
-        private readonly CustomerDBContext _customerdBContext;
-        public CustomerController(CustomerDBContext customerdBContext)
+        public CustomerController(CustomerDbContext customerDbContext)
         {
-            _customerdBContext = customerdBContext;
+            _customerDbContext = customerDbContext;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Customer>> GetCustomers() {
-
-            return _customerdBContext.Cusotmers;
+        public ActionResult<IEnumerable<Customer>> GetCustomers()
+        {
+            return _customerDbContext.Customers;
         }
 
         [HttpGet("{customerId:int}")]
-        public async Task<ActionResult<Customer>> getCustomerById(int customerId)
+        public async Task<ActionResult<Customer>> GetById(int customerId)
         {
-            var customer = await _customerdBContext.Cusotmers.FindAsync(customerId);
-
-            if(customer == null)
-            {
-                return NotFound();
-            }
-
+            var customer = await _customerDbContext.Customers.FindAsync(customerId);
             return customer;
         }
 
         [HttpPost]
         public async Task<ActionResult> Create(Customer customer)
         {
-            await _customerdBContext.Cusotmers.AddAsync(customer);
-            await _customerdBContext.SaveChangesAsync();
+            await _customerDbContext.Customers.AddAsync(customer);
+            await _customerDbContext.SaveChangesAsync();
             return Ok();
         }
 
         [HttpPut]
         public async Task<ActionResult> Update(Customer customer)
         {
-            _customerdBContext.Cusotmers.Update(customer);
-            await _customerdBContext.SaveChangesAsync();
+            _customerDbContext.Customers.Update(customer);
+            await _customerDbContext.SaveChangesAsync();
             return Ok();
         }
 
         [HttpDelete("{customerId:int}")]
         public async Task<ActionResult> Delete(int customerId)
         {
-            var customer = await _customerdBContext.Cusotmers.FindAsync(customerId);
-            if(customer == null)
-            {
-                return NotFound();
-            }
-            _customerdBContext.Cusotmers.Remove(customer);
-            await _customerdBContext.SaveChangesAsync();
+            var customer = await _customerDbContext.Customers.FindAsync(customerId);
+            _customerDbContext.Customers.Remove(customer);
+            await _customerDbContext.SaveChangesAsync();
             return Ok();
         }
-
-
     }
 }
